@@ -66,7 +66,6 @@ td {
 <script>
 var div1 = document.getElementById("div1");
 var tbl = document.createElement("table");
-var temp;
 
 	for(i=0; i<5; i++){
 		var tr = document.createElement("tr");
@@ -75,9 +74,10 @@ var temp;
 		for(j=0; j<5; j++){
 			var td = document.createElement("td");
 			numbers.push(Math.floor(Math.random()*50)+1);
-			/* if(numbers[j] == numbers[j-1]){ // 중복검사 안되노 ㅡㅡ
+			if(numbers[j] == numbers[j-1]){
+				console.log(numbers[j])
 				j--;
-			} */
+			}
 			td.appendChild(document.createTextNode(numbers[j]));
 			tr.appendChild(td);
 		}
@@ -143,7 +143,6 @@ var starFlag = true;
 						}, 1000);
 					}
 				});
-
 		// pause btn
 		$("#pausebtn").click(function() {
 			if (time != 0) {

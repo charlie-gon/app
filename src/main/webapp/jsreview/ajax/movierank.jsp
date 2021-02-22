@@ -11,6 +11,12 @@
 <div id="result"></div>
 
 <script>
+
+	// 코드에 해당하는 영화 상세정보 조회(감독,출연배우 등등)
+	function loadInfo(){
+		
+	}
+
 	function loadMovie(){
 		var xhttp = new XMLHttpRequest();
 		xhttp.onload = function(){
@@ -21,7 +27,8 @@
 			var result = mNames.boxOfficeResult.dailyBoxOfficeList;
 			
 			for(mv of result){
-				document.getElementById("result").innerHTML += mv.movieNm + " / " + mv.movieCd + "<br>";
+				document.getElementById("result").innerHTML += 
+					"<div onclick=loadInfo('"+ mv.movieCd +"')>" + mv.movieNm + mv.movieCd + "</div>";
 			}
 				
 			/* for(i=0; i<result.length; i++){

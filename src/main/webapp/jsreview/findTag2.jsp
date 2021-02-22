@@ -7,14 +7,15 @@
 <title>Insert title here</title>
 <script>
 
-function calc1(){
+function calc1(){ // 210222 과제
 	var sum = 0;
 	var table = document.getElementById("tbl1");
 	
 	for(i=0; i<table.rows.length-1; i++){
-		var score = table.rows[i].cells[1].innerText;
+		var score = table.rows[i].cells[0].innerText;
 		sum += parseInt(score);
 	}
+	table.rows[table.rows.length-1].cells[0].innerText = sum;
 }
 
 function calc2(){

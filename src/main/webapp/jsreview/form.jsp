@@ -11,7 +11,7 @@
 	function validateForm() {
 		var x = document.forms["myForm"]["fname"].value;
 		if (x == "") {
-			alert("Name must be filled out");
+			alert("이름을 입력하세요!");
 			return false;
 		}
 
@@ -23,15 +23,19 @@
 		var job = document.myForm.job.selectedIndex;
 
 		if (job <= 0) {
-			alert("Job must be filled out");
+			alert("직업을 선택하세요!");
 			return false;
 		}
 		
-		// 체크 여부 확인
-/* 		var chk = document.myForm.hobby.checked;
-		if(!chk){
-			alert("취미를 체크하세요!~");
-		} */
+		// 체크박스 적어도 하나이상 체크여부 확인 
+		// 참고: https://allg.tistory.com/6
+		var hobby = document.getElementsByName("hobby");
+		for(i=0; i<hobby.length; i++){
+			if(!hobby[i].checked){
+				alert("취미를 선택하세요!");
+				return false;
+			}
+		}
 		
 		// 체크박스 과제
 		// 체크된 갯수가 하나 이상인지 체크(for)
@@ -40,7 +44,7 @@
 		for(i=0; i<document.myForm.hobby.length; i++){
 			if(document.myForm.hobby[i].checked){
 			}
-				alert("하나만 체크!");
+				alert("하나만 체크하세요!");
 				return false;
 		}
 		document.forms["myForm"].submit();

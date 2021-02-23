@@ -25,14 +25,20 @@
 			
 			for(mv in result){
 				console.log(mv + "/" + result[mv]);
-				document.getElementById("result").innerHTML += 
-					"<div><strong>"
-					+ "배우: " + mv.actors(0).peopleNm+ "<br>"
-					
+				document.getElementById("result").innerHTML = 
+					+ "<hr>"
+					+ "<div><strong>"
+					+ "제목: " + result['movieNm'] + "<br>" 
+					+ "감독: " + result['directors'][0].peopleNm+ "<br>"
+					+ "주연: " + result['actors'][0].peopleNm+ "<br>"
+					+ "장르: " + result['genres'][0].genreNm+ "<br>"
+					+ "시간: " + result['showTm'] + "분<br>"
+					+ "배급: " + result['companys'][0].companyNm+ "<br>"
 					+ "</strong></div>";
 			}
-			
-		}
+		} 
+		// 아직 정확한 로직 잘 모르겠음. 좀 더 공부 필요.
+		// 배우, 감독 이름 모두 출력하고자 한다면?
 		
 		var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=f5eef3421c602c6cb7ea224104795888&movieCd="+e;
 		xhttp.open("GET", url);

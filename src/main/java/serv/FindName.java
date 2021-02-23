@@ -24,7 +24,7 @@ public class FindName extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// id 파라미터에 해당하는 이름 검색해서 리턴
-		int a = 5/0; // 에러 메시지 확인용 에러
+		//int a = 5/0; // 에러 메시지 확인용 에러
 		response.setContentType("text/html; charset=UTF-8");
 		try {
 			Thread.sleep(2000); // 시간 지연(2초)

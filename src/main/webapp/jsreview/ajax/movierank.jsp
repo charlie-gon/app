@@ -25,15 +25,11 @@
 			
 			for(mv in result){
 				console.log(mv + "/" + result[mv]);
-				document.getElementById("result").innerHTML += mv + ": " + result[mv] + "<br>";
-					/* "<div><strong>"
-					+ "번호: " + result.movidCd + "<br>"
-					+ "제목: " + result.movieNm + "<br>"
-					+ "감독: " + result.directors + "<br>"
-					+ "주연: " + result.actors + "<br>"
-					+ "장르: " + result.genres + "<br>"
-					+ "상영시간: " + mv.showTm + "<br>"
-					+ "</strong></div>"; */
+				document.getElementById("result").innerHTML += 
+					"<div><strong>"
+					+ "배우: " + mv.actors(0).peopleNm+ "<br>"
+					
+					+ "</strong></div>";
 			}
 			
 		}

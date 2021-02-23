@@ -25,7 +25,22 @@
 	});
 		// 영화코드 클릭 시 상세정보 출력
 	$(function(e){
-		
+		$(e).on('click', function(){
+			$.ajax({
+				url:"http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=f5eef3421c602c6cb7ea224104795888&movieCd="+e,
+				success: function(obj){
+					var result = obj.movieInfoResult.movieInfo;
+					for(info in result){
+						$('#info').append(
+							"제목: " , result['movieNm'] , "<br>",
+							//"감독: " , result['directors'][0].peopleNm , "<br>" 
+						);}
+				},
+				dataType: "json"
+			}).done(function(){
+				$('#info').css('font-size', '30px');
+			});
+		});
 	});
 </script>
 </head>

@@ -17,29 +17,40 @@ $(function(){
 	// '로그인' 클릭 시 login.jsp 리턴
 	// '로그인' 외 버튼 클릭 시 반응 X
 	// 참고: https://sas-study.tistory.com/153
-	$('ul').children('li:last').on('click',function(){
-		var msg = $('ul').children('li:last').html();
-		alert(msg + " 클릭Yo");
-		$('#result').load("login.jsp");
-	});
 	
-	// '게시판' 클릭 시 board.jsp 리턴
-	$('ul').children('li').eq(0).on('click', function(){
-		var msg = $('ul').children('li').eq(0).html();
-		alert(msg + " 클릭Yo");
-		$('#result').load("board.jsp");
-	});
-	
-	// '회원가입' 클릭 시 member.jsp 리턴
-	$('ul').children('li').eq(1).on('click', function(){
-		var msg = $('ul').children('li').eq(1).html();
-		alert(msg + " 클릭Yo");
-		$('#result').load('member.jsp');
-	});
-	
-	// ajax ver
-	
-})
+	$('ul').children('li:last').on('click', function() {
+			var msg = $('ul').children('li:last').html();
+			alert(msg + " 클릭Yo");
+			$('#result').load("login.jsp");
+		});
+
+		// '게시판' 클릭 시 board.jsp 리턴 / is 메소드 사용
+		// 참고: https://api.jquery.com/is/
+		$('.menu').on('click', function() {
+			if ($(this).is(':first-child')) {
+				var msg = $('ul').children('li').eq(0).html();
+				alert(msg + " 클릭Yo");
+				$('#result').load("board.jsp");
+			}
+		});
+
+		// '게시판' 클릭 시 board.jsp 리턴 / 일반 버전
+		/* 	$('ul').children('li').eq(0).on('click', function(){
+		 var msg = $('ul').children('li').eq(0).html();
+		 alert(msg + " 클릭Yo");
+		 $('#result').load("board.jsp");
+		 }); */
+
+		// '회원가입' 클릭 시 member.jsp 리턴
+		$('ul').children('li').eq(1).on('click', function() {
+			var msg = $('ul').children('li').eq(1).html();
+			alert(msg + " 클릭Yo");
+			$('#result').load('member.jsp');
+		});
+
+		// ajax ver
+
+	})
 </script>
 </head>
 <body>

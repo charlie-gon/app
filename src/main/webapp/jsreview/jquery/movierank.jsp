@@ -33,7 +33,7 @@
 					for(info in result){
 						$('#info').append(
 							"제목: " , result['movieNm'] , "<br>",
-							//"감독: " , result['directors'][0].peopleNm , "<br>" 
+							"감독: " , result['directors'][0].peopleNm , "<br>" 
 						);}
 				},
 				dataType: "json"

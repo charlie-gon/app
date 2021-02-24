@@ -25,6 +25,7 @@
 			
 			for(mv in result){
 				console.log(mv + "/" + result[mv]);
+				console.log(result['movieNm']);
 				document.getElementById("result").innerHTML = 
 					+ "<hr>"
 					+ "<div><strong>"

@@ -5,7 +5,13 @@
 <style>
 	
 </style>
-
+<script>
+// localStorage 연습(jspStorage.jsp)
+var n = localStorage.getItem("name");
+if(n != null){
+	alert(n);
+}
+</script>
 </head>
 <body>
 <h2>Hello World!</h2>

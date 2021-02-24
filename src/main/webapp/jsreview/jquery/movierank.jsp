@@ -24,7 +24,7 @@
 		});
 	});
 		// 영화코드 클릭 시 상세정보 출력
-	$(function(e){
+	$(function(){
 		$(e).on('click', function(){
 			$.ajax({
 				url:"http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=f5eef3421c602c6cb7ea224104795888&movieCd="+e,
